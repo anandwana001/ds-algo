@@ -15,9 +15,8 @@ Daily Coding Problems and Concept Learning
  - [GeeksforGeeks](https://www.geeksforgeeks.org/data-structures/)
  - [CTCI - Book](https://www.amazon.in/Cracking-the-Coding-Interview/dp/0984782869/)
 
-### Time - Space Complexity
-// TODO Add notes
-
+### CTCI Chapters
+1. Big O
 
 ### Questions
 
