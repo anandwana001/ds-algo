@@ -1,7 +1,5 @@
 package string;
 
-import java.text.BreakIterator;
-
 public class truncateSentence {
 
     public static void main(String[] args) {
