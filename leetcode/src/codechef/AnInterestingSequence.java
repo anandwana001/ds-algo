@@ -12,41 +12,42 @@ public class AnInterestingSequence {
         InputStream inputStream = System.in;
         InputReader in = new InputReader(inputStream);
 
+        int[] ans = generatePhi();
+
         int T = in.nextInt();
         while (T-- > 0) {
-            long k = in.nextInt();
-            long ans = 0;
-            for(long i = 1; i <= 2*k; i++) {
-                long a = k + i*i;
-                long b = k + ((i+1)*(i+1));
-                if(i % 2 != 0)
-                    ans += gcd(a/2, b);
-                else
-                    ans += gcd(a, b/2);
+            int k = in.nextInt();
+            System.out.println(ans[4 * k + 1]);
+        }
+    }
+
+    private static int[] generatePhi() {
+        int N = 4000005;
+        int[] phi = new int[4000005];
+        int[] ans = new int[4000005];
+
+        for(int i=0; i<N; i++) {
+            phi[i] = i;
+            ans[i] = 0;
+        }
+
+        for(int i = 2; i<N; i++) {
+            if(phi[i] == i){
+                phi[i] = i - 1;
+                for(int j =  2 * i; j<N; j+=i) {
+                    phi[j] = (phi[j]/i) * (i-1);
+                }
             }
-            System.out.println(ans);
         }
-    }
 
-    static boolean isPrime(long n) {
-        if(n < 2) return false;
-        if(n == 2 || n == 3) return true;
-        if(n%2 == 0 || n%3 == 0) return false;
-        long sqrtN = (long)Math.sqrt(n)+1;
-        for(long i = 6L; i <= sqrtN; i += 6) {
-            if(n%(i-1) == 0 || n%(i+1) == 0) return false;
+        for(int i = 1; i<N; i++) {
+            ans[i] += i -1;
+            for(int j = 2 * i; j<N; j+=i){
+                ans[j] += i * ((1 + phi[j/i]) / 2);
+            }
         }
-        return true;
-    }
 
-    static long gcd (long a, long b) {
-        while (b != 0) {
-            a %= b;
-            long temp = a;
-            a = b;
-            b = temp;
-        }
-        return a;
+        return ans;
     }
 
     static class InputReader {
