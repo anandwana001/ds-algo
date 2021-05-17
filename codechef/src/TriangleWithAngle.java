@@ -1,5 +1,3 @@
-package codechef;
-
 import java.util.Scanner;
 
 public class TriangleWithAngle {

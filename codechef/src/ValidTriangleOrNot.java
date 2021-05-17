@@ -1,30 +1,23 @@
-package codechef;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class SumOfDigits {
+public class ValidTriangleOrNot {
 
     public static void main(String[] args) {
         InputStream inputStream = System.in;
-
         InputReader in = new InputReader(inputStream);
-        int T = in.nextInt();
 
-        while(T-- >0){
-            int n = in.nextInt();
-            int sum = 0;
-            while (n != 0)
-            {
-                sum = sum + n % 10;
-                n = n/10;
-            }
-            System.out.println(sum);
-        }
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
 
+        if (a + b <= c || a + c <= b || b + c <= a)
+            System.out.println("NO");
+        else
+            System.out.println("YES");
     }
 
     static class InputReader {

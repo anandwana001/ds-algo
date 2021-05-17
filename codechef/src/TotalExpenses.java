@@ -1,19 +1,26 @@
-package codechef;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class SumIsEverywhere {
+public class TotalExpenses {
 
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         InputReader in = new InputReader(inputStream);
 
-        long n = in.nextInt();
-        System.out.println( (n * n) + " " + n * (n + 1));
+        int T = in.nextInt();
+        while (T-- > 0) {
+            int q = in.nextInt();
+            int p = in.nextInt();
+            double totalPrice = p * q;
+            if(q > 1000){
+                totalPrice -= 0.10 * p * q;
+            }
+            System.out.printf("%.6f", totalPrice);
+            System.out.println();
+        }
     }
 
     static class InputReader {

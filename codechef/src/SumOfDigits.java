@@ -1,28 +1,28 @@
-package codechef;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class TotalExpenses {
+public class SumOfDigits {
 
     public static void main(String[] args) {
         InputStream inputStream = System.in;
-        InputReader in = new InputReader(inputStream);
 
+        InputReader in = new InputReader(inputStream);
         int T = in.nextInt();
-        while (T-- > 0) {
-            int q = in.nextInt();
-            int p = in.nextInt();
-            double totalPrice = p * q;
-            if(q > 1000){
-                totalPrice -= 0.10 * p * q;
+
+        while(T-- >0){
+            int n = in.nextInt();
+            int sum = 0;
+            while (n != 0)
+            {
+                sum = sum + n % 10;
+                n = n/10;
             }
-            System.out.printf("%.6f", totalPrice);
-            System.out.println();
+            System.out.println(sum);
         }
+
     }
 
     static class InputReader {

@@ -1,32 +1,17 @@
-package codechef;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class turboSort {
+public class SumIsEverywhere {
 
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         InputReader in = new InputReader(inputStream);
 
-        int[] arr = new int[1000000];
-        int t = in.nextInt();
-        int a=0;
-        while(t-- > 0) {
-            arr[in.nextInt()]++;
-        }
-        while(a<1000000)
-        {
-            while(arr[a] != 0)
-            {
-                System.out.println(a);
-                arr[a]--;
-            }
-            a++;
-        }
+        long n = in.nextInt();
+        System.out.println( (n * n) + " " + n * (n + 1));
     }
 
     static class InputReader {
@@ -53,5 +38,4 @@ public class turboSort {
             return Integer.parseInt(next());
         }
     }
-
 }
