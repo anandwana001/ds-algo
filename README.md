@@ -24,6 +24,7 @@ Daily Coding Problems and Concept Learning
      - [Data Structures](https://www.geeksforgeeks.org/data-structures/)
      - [Algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/?ref=shm)
  - [CTCI - Book](https://www.amazon.in/Cracking-the-Coding-Interview/dp/0984782869/)
+ - [GitHub Repo](https://yangshun.github.io/tech-interview-handbook/algorithms/algorithms-introduction)
 
 ### CTCI Chapters
 1. Big O
